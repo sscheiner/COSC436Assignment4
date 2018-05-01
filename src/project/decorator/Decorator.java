@@ -1,4 +1,5 @@
-package project.addons;
+package project.decorator;
+import project.addons.AddOn;
 import project.receipt.*;
 
 public abstract class Decorator implements Receipt {
