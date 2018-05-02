@@ -41,6 +41,9 @@ public class ReceiptFactory {
 		String year = storeInfo.get(3);
 		String phone = storeInfo.get(4);
 		
+		//test print
+		System.out.println(streetAddress +"\n" + state +"\n" + zip +"\n" + year +"\n" + phone);
+		
 	// 3. Based on the state code (e.g., “MD”) creates and stores appropriate StateComputation object to be used on all receipts.
 	}
 

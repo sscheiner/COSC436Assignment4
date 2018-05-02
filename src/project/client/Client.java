@@ -27,7 +27,9 @@ public class Client{
 		
 		
 		// 3. Constructs a ReceiptFactory object.
-		
+		ReceiptFactory factory = new ReceiptFactory();
+		//Receipt receipt = factory.getReceipt(items, date);
+		//receipt.prtReceipt();
 		
 		// 3. Prompts user for items to purchase, storing each in PurchasedItems.
 		// 4. Calls the getReceipt method of the factory to obtain constructed receipt.
@@ -37,9 +39,7 @@ public class Client{
 		// display all available store items to user)
 		// get all user selections
 		
-		ReceiptFactory factory = new ReceiptFactory();
-		Receipt receipt = factory.getReceipt(items, date);
-		receipt.prtReceipt();
-		
+
+		System.out.println("finished");
 	}	
 }
