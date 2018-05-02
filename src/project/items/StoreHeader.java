@@ -1,4 +1,4 @@
-package project.data;
+package project.items;
 
 public class StoreHeader {
 	private String street_addr;

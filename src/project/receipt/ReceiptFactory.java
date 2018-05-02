@@ -1,7 +1,10 @@
 package project.receipt;
-import project.data.*;
 import project.addons.*;
+import project.items.*;
 import project.TaxComputationClasses.*;
+
+import java.io.*;
+import java.util.*;
 
 public class ReceiptFactory {
 	
@@ -9,10 +12,20 @@ public class ReceiptFactory {
 	private TaxComputationMethod[] taxComputationsObjs; // tax computation objs (for each state)
 	private AddOn[] addOns; // secondary heading, rebate and coupon add-ons (hardcoded here)
 	
+
+	
 	public ReceiptFactory() { 
-		// constructor
+	// constructor
 	// 1. Populates array of TaxComputationMethod objects and array of AddOn objects (as if downloaded from the BestBuy web site).
 	// 2. Reads config file to create and save StoreHeader object (store_num, street_addr, etc.) to be used on all receipts.
+		File storeConfig = new File("examplestore.txt");
+		try {
+			FileReader reader = new FileReader(storeConfig);
+		} catch (FileNotFoundException e) {
+			//auto-generated
+			e.printStackTrace();
+		}
+		
 	// 3. Based on the state code (e.g., “MD”) creates and stores appropriate StateComputation object to be used on all receipts.
 	}
 

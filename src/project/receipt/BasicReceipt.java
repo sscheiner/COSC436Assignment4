@@ -3,7 +3,7 @@ package project.receipt;
 import java.util.Date;
 
 import project.TaxComputationClasses.*;
-import project.data.*;
+import project.items.*;
 
 public class BasicReceipt implements Receipt {
 	private StoreHeader store_header; // street address, state code, phone number, store number

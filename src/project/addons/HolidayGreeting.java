@@ -1,5 +1,5 @@
 package project.addons;
-import project.data.*;
+import project.items.*;
 
 public class HolidayGreeting implements SecondaryHeading {
 	public boolean applies(PurchasedItems items) {

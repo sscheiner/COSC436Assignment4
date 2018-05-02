@@ -1,5 +1,5 @@
 package project.TaxComputationClasses;
-import project.data.*;
+import project.items.*;
 import project.receipt.*;
 
 public class MDTaxComputation extends TaxComputationMethod {

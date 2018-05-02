@@ -1,4 +1,4 @@
-package project.data;
+package project.items;
 
 import java.util.*;
 
@@ -7,6 +7,7 @@ public class PurchasedItems {
 		public PurchasedItems() {
 		List<Object> items = new ArrayList<>();
 	}
+		
 	public void addItem(StoreItem item) {
 		
 	}
