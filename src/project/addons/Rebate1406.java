@@ -1,5 +1,5 @@
 package project.addons;
-import project.application.*;
+import project.data.*;
 
 public class Rebate1406 implements Rebate {
 	

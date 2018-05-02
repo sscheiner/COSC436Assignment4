@@ -1,5 +1,5 @@
 package project.TaxComputationClasses;
-import project.application.PurchasedItems;
+import project.data.PurchasedItems;
 import project.receipt.*;
 
 public abstract class TaxComputationMethod {

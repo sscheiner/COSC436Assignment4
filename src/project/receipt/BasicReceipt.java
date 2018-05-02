@@ -1,10 +1,9 @@
 package project.receipt;
 
-import project.application.*;
-
 import java.util.Date;
 
 import project.TaxComputationClasses.*;
+import project.data.*;
 
 public class BasicReceipt implements Receipt {
 	private StoreHeader store_header; // street address, state code, phone number, store number

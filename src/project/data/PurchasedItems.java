@@ -1,4 +1,4 @@
-package project.application;
+package project.data;
 
 import java.util.*;
 

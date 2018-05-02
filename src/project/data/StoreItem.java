@@ -1,4 +1,4 @@
-package project.application;
+package project.data;
 
 public class StoreItem {
 	private String itemCode; // e.g., 3010
