@@ -17,8 +17,8 @@ public class Client{
 		// 2. Creates a PurchasedItems object (selections made by user)
 		//we will presume the customer purchases a computer mouse, headphones, and a pack of ethernet cables
 		StoreItem mouse = new StoreItem("1406", "laser mouse", "14.95");
-		StoreItem headphone = new StoreItem("1406", "usb headphones", "25.99");
-		StoreItem cables = new StoreItem("1406", "ethernet cbl 5 pack", "9.99");
+		StoreItem headphone = new StoreItem("1202", "usb headphones", "25.99");
+		StoreItem cables = new StoreItem("1969", "ethernet cbl 5 pack", "9.99");
 		PurchasedItems items = new PurchasedItems();
 		items.addItem(mouse);
 		items.addItem(headphone);
@@ -32,6 +32,8 @@ public class Client{
 		//receipt.prtReceipt();
 		
 		// 3. Prompts user for items to purchase, storing each in PurchasedItems.
+		
+		
 		// 4. Calls the getReceipt method of the factory to obtain constructed receipt.
 		// 5. Prints receipt by call to method prtReceipt.
 		// get receipt date
