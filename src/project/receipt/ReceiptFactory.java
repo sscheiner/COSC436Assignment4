@@ -17,6 +17,7 @@ public class ReceiptFactory {
 	private TaxComputationMethod taxComputer; //initialized at runtime
 	private AddOn[] addOnArray;
 	BasicReceipt basicReceipt;
+	Receipt decorated; //decorated object to be returned
 	
 	public ReceiptFactory() { 
 	// constructor
@@ -24,7 +25,8 @@ public class ReceiptFactory {
 		TaxComputationMethod[] taxComputationMethodArray = {new MDTaxComputation(), new CATaxComputation()};
 		AddOn[] temp = {new HolidayGreeting(), new Rebate1406()};
 		addOnArray = temp; //array constants can only be used in initializers
-		
+
+
 	// 2. Reads config file to create and save StoreHeader object (store_num, street_addr, etc.) to be used on all receipts.
 
 		ArrayList<String> storeInfo = new ArrayList<String>();
@@ -89,13 +91,19 @@ public class ReceiptFactory {
 		for(int i = 0; i < addOnArray.length; i++) {
 			if(addOnArray[i].applies(items)){
 				if(addOnArray[i] instanceof SecondaryHeading) {
-					PreDecorator secondaryHeader = new PreDecorator(basicReceipt, addOnArray[i]); 				
+					PreDecorator secondaryHeader = new PreDecorator(basicReceipt, addOnArray[i]);
+					// 5. Links in the decorator object based on the Decorator design pattern.
+					decorated = secondaryHeader;
 				}
 				else if(addOnArray[i] instanceof Rebate){
-					PostDecorator secondaryHeader = new PostDecorator(basicReceipt, addOnArray[i]);
+					PostDecorator rebate = new PostDecorator(basicReceipt, addOnArray[i]);
+					// 5. Links in the decorator object based on the Decorator design pattern.
+					decorated = rebate;
 				}
 				else if(addOnArray[i] instanceof Coupon){
-					PostDecorator secondaryHeader = new PostDecorator(basicReceipt, addOnArray[i]);
+					PostDecorator coupon = new PostDecorator(basicReceipt, addOnArray[i]);
+					// 5. Links in the decorator object based on the Decorator design pattern.
+					decorated = coupon;
 				}
 				
 				
@@ -104,11 +112,9 @@ public class ReceiptFactory {
 			
 		}
 		
-	// 5. Links in the decorator object based on the Decorator design pattern.
+
 	// 6. Returns decorated BasicReceipt object as type Receipt.
-	
-		//TODO: implement
-		return basicReceipt;
+		return decorated;
 	}
 	
 }
