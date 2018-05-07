@@ -1,5 +1,7 @@
 package project.receipt;
 import project.addons.*;
+import project.decorator.PostDecorator;
+import project.decorator.PreDecorator;
 import project.items.*;
 import project.TaxComputationClasses.*;
 
@@ -69,6 +71,8 @@ public class ReceiptFactory {
 	}
 	
 	public Receipt getReceipt(PurchasedItems items, Date date) {
+
+		
 	// 1. Sets the current date of the BasicReceipt.
 		basicReceipt = new BasicReceipt(items, date); 
 		
@@ -83,12 +87,16 @@ public class ReceiptFactory {
 	//or Coupon.If of type SecondaryHeader, then creates a PreDecorator for othe AddOn. 
 	//If of type Rebate orCoupon, then creates a PostDecorator.
 		for(int i = 0; i < addOnArray.length; i++) {
-			if(addOnArray[i].applies(items){
+			if(addOnArray[i].applies(items)){
 				if(addOnArray[i] instanceof SecondaryHeading) {
-										
+					PreDecorator secondaryHeader = new PreDecorator(basicReceipt, addOnArray[i]); 				
 				}
-				else if()
-				
+				else if(addOnArray[i] instanceof Rebate){
+					PostDecorator secondaryHeader = new PostDecorator(basicReceipt, addOnArray[i]);
+				}
+				else if(addOnArray[i] instanceof Coupon){
+					PostDecorator secondaryHeader = new PostDecorator(basicReceipt, addOnArray[i]);
+				}
 				
 				
 			}

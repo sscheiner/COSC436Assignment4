@@ -1,9 +1,20 @@
 package project.decorator;
 
-public class PostDecorator {
+import project.addons.AddOn;
+import project.receipt.Receipt;
 
-	public PostDecorator() {
-		// TODO Auto-generated constructor stub
+public class PostDecorator extends Decorator{
+		
+		private AddOn a;
+		
+		public PostDecorator(Receipt r, AddOn a) {
+			super(r, a);
+		}
+		
+		public void prtReceipt() {
+			callTrailer();
+			System.out.println(a.getLines());
+			
+		}
+		
 	}
-
-}
