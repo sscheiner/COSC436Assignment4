@@ -4,6 +4,10 @@ import java.util.Date;
 
 public class HolidayGreeting implements SecondaryHeading {
 	
+	public HolidayGreeting() {
+		
+	}
+	
 	public boolean applies(PurchasedItems items) {
 		/*
 		Date dateObject = new Date();

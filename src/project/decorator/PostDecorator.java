@@ -9,6 +9,7 @@ public class PostDecorator extends Decorator{
 		
 		public PostDecorator(Receipt r, AddOn a) {
 			super(r, a);
+			this.a = a;
 		}
 		
 		public void prtReceipt() {

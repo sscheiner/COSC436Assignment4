@@ -8,6 +8,7 @@ public class PreDecorator extends Decorator {
 	
 	public PreDecorator(Receipt r, AddOn a) {
 		super(r, a);
+		this.a = a;
 	}
 	
 	public void prtReceipt() {

@@ -90,7 +90,7 @@ public class ReceiptFactory {
 	//If of type Rebate orCoupon, then creates a PostDecorator.
 		for(int i = 0; i < addOnArray.length; i++) {
 			if(addOnArray[i].applies(items)){
-				if(addOnArray[i] instanceof SecondaryHeading) {
+				if(addOnArray[i] instanceof SecondaryHeading) {					
 					PreDecorator secondaryHeader = new PreDecorator(basicReceipt, addOnArray[i]);
 					// 5. Links in the decorator object based on the Decorator design pattern.
 					decorated = secondaryHeader;
