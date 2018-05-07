@@ -8,18 +8,20 @@ import java.util.*;
 
 public class ReceiptFactory {
 
-	public static final String CFGFILENAME = "example.txt";
+	public static final String CFGFILENAME = "examplestore.txt";
 	
 	
-	StoreHeader store_header; // contains street_addr, zip_code, state_code, phone num, store num
-	private AddOn[] addOns; // secondary heading, rebate and coupon add-ons (hardcoded here)
+	private StoreHeader store_header; // contains street_addr, zip_code, state_code, phone num, store num
 	private TaxComputationMethod taxComputer; //initialized at runtime
+	private AddOn[] addOnArray;
 	BasicReceipt basicReceipt;
 	
 	public ReceiptFactory() { 
 	// constructor
 	// 1. Populates array of TaxComputationMethod objects and array of AddOn objects (as if downloaded from the BestBuy web site).
-		TaxComputationMethod[] taxComputationMethodArray = {new MDTaxComputation(), new CATaxComputation()};	
+		TaxComputationMethod[] taxComputationMethodArray = {new MDTaxComputation(), new CATaxComputation()};
+		AddOn[] temp = {new HolidayGreeting(), new Rebate1406()};
+		addOnArray = temp; //array constants can only be used in initializers
 		
 	// 2. Reads config file to create and save StoreHeader object (store_num, street_addr, etc.) to be used on all receipts.
 
@@ -76,12 +78,28 @@ public class ReceiptFactory {
 	// 3. Sets the TaxComputationMethod object of the BasicReceipt (by call to the setTaxComputationMethod of BasicReceipt).
 		basicReceipt.setTaxComputationMethod(taxComputer);
 		
-	// 4. Traverses over all AddOn objects, calling the applies method of each. If an AddOn object applies, then determines if the AddOn is of type SecondaryHeader, Rebate, or Coupon.If of type SecondaryHeader, then creates a PreDecorator for othe AddOn. If of type Rebate orCoupon, then creates a PostDecorator.
+	// 4. Traverses over all AddOn objects, calling the applies method of each.
+	//If an AddOn object applies, then determines if the AddOn is of type SecondaryHeader, Rebate,
+	//or Coupon.If of type SecondaryHeader, then creates a PreDecorator for othe AddOn. 
+	//If of type Rebate orCoupon, then creates a PostDecorator.
+		for(int i = 0; i < addOnArray.length; i++) {
+			if(addOnArray[i].applies(items){
+				if(addOnArray[i] instanceof SecondaryHeading) {
+										
+				}
+				
+				
+				
+			}
+			
+			
+		}
+		
 	// 5. Links in the decorator object based on the Decorator design pattern.
 	// 6. Returns decorated BasicReceipt object as type Receipt.
 	
 		//TODO: implement
-		return null;
+		return basicReceipt;
 	}
 	
 }
