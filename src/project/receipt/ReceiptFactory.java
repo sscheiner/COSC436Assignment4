@@ -20,7 +20,7 @@ public class ReceiptFactory {
 	public ReceiptFactory() { 
 	// constructor
 	// 1. Populates array of TaxComputationMethod objects and array of AddOn objects (as if downloaded from the BestBuy web site).
-		TaxComputationMethod[] taxComputationMethodArray = {};	
+		TaxComputationMethod[] taxComputationMethodArray = {new MDTaxComputation(), new CATaxComputation()};	
 		
 	// 2. Reads config file to create and save StoreHeader object (store_num, street_addr, etc.) to be used on all receipts.
 
