@@ -11,8 +11,7 @@ public class StoreHeader {
 	}
 	
 	public String getStateCode() {
-		//TODO: implement
-		return null;
+		return state_code;
 	}
 	
 	public String toString() {

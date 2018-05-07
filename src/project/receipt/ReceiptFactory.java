@@ -7,6 +7,9 @@ import java.io.*;
 import java.util.*;
 
 public class ReceiptFactory {
+
+	public static final String CFGFILENAME = "example.txt";
+	
 	
 	StoreHeader store_header; // contains street_addr, zip_code, state_code, phone num, store num
 	private TaxComputationMethod[] taxComputationsObjs; // tax computation objs (for each state)
@@ -17,10 +20,12 @@ public class ReceiptFactory {
 	public ReceiptFactory() { 
 	// constructor
 	// 1. Populates array of TaxComputationMethod objects and array of AddOn objects (as if downloaded from the BestBuy web site).
+		TaxComputationMethod[] taxComputationMethodArray = {};	
+		
 	// 2. Reads config file to create and save StoreHeader object (store_num, street_addr, etc.) to be used on all receipts.
 
 		ArrayList<String> storeInfo = new ArrayList<String>();
-		File storeConfig = new File("examplestore.txt");
+		File storeConfig = new File(CFGFILENAME);
 		try {
 			
 			BufferedReader br = new BufferedReader(new FileReader(storeConfig));
@@ -42,11 +47,12 @@ public class ReceiptFactory {
 		String phone = storeInfo.get(4);
 		
 		//test print
-		System.out.println(streetAddress +"\n" + state +"\n" + zip +"\n" + year +"\n" + phone);
+		//System.out.println(streetAddress +"\n" + state +"\n" + zip +"\n" + year +"\n" + phone);
 		
-	// 3. Based on the state code (e.g., “MD”) creates and stores appropriate StateComputation object to be used on all receipts.
+		// 3. Based on the state code creates and stores appropriate StateComputation object to be used on all receipts.
+	
 	}
-
+	
 	public Receipt getReceipt(PurchasedItems items, Date date) {
 	// 1. Sets the current date of the BasicReceipt.
 	// 2. Sets StoreHeader object of the BasicReceipt (by call to SetStoreHeader of BasicReceipt)

@@ -6,6 +6,9 @@ public class StoreItem {
 	private String itemPrice;
 	
 	public StoreItem(String code, String descript, String price){
+		this.itemCode = code;
+		this.itemDescription = descript;
+		this.itemPrice = price;
 		
 	}
 	// appropriate getters and setters
@@ -32,5 +35,11 @@ public class StoreItem {
 
 	public void setItemPrice(String itemPrice) {
 		this.itemPrice = itemPrice;
+	}
+	
+	public String toString() {
+		return "code: " + itemCode + "\n" +
+				"Description: " + itemDescription + "\n" +
+				"Price: $" + itemPrice + "\n";
 	}
 }

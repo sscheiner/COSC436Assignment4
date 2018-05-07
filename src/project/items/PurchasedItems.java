@@ -6,7 +6,7 @@ public class PurchasedItems {
 	private ArrayList<StoreItem> items;
 	
 	public PurchasedItems() {
-		List<Object> items = new ArrayList<>();
+		items = new ArrayList<>();
 	}
 		
 	public void addItem(StoreItem item) {
@@ -33,5 +33,9 @@ public class PurchasedItems {
 		}
 		
 		return false;
+	}
+
+	public ArrayList<StoreItem> getItems() {
+		return items;
 	}
 }
