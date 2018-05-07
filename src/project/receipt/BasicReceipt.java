@@ -19,10 +19,12 @@ public class BasicReceipt implements Receipt {
 		store_header = h;
 	}
 	
-	public void setTaxComputationMethod(TaxComputationMethod tc) { this.tc = tc; }
+	public void setTaxComputationMethod(TaxComputationMethod tc) {
+		this.tc = tc;
+	}
 	
 	public void prtReceipt() {
-	// to implement
+		System.out.println(store_header.toString());
 	}
 	
 }

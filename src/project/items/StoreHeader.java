@@ -16,6 +16,8 @@ public class StoreHeader {
 	
 	public String toString() {
 		//TODO: implement
-		return null;
+		return "BEST BUY \t\t\t Store #" + store_num + "\n"
+				+ street_addr + " " + zip_code + "\n"
+				+"\t\t" + phone_num;
 	}
 }
