@@ -38,9 +38,9 @@ public class BasicReceipt implements Receipt {
 			subTotal += Double.parseDouble(x.getItemPrice());
 		}
 		
-		System.out.printf("Subtotal: \t\t$%.2f", subTotal);
-		System.out.printf("Sales tax: \t\t$%.2f", salesTax);
-		System.out.printf("Total: \t\t$%.2f", subTotal + salesTax);
+		System.out.printf("\nSubtotal: \t\t$%.2f", subTotal);
+		System.out.printf("\nSales tax: \t\t$%.2f", salesTax);
+		System.out.printf("\nTotal: \t\t$%.2f\n\n", subTotal + salesTax);
 	}
 	
 }

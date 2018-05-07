@@ -29,7 +29,7 @@ public class MDTaxComputation extends TaxComputationMethod {
 		}
 		
 		
-		return 0.0;
+		return totalSalesTax;
 	}
 
 	@Override

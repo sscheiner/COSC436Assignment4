@@ -78,6 +78,6 @@ public class Client{
 		// get all user selections
 		
 
-		System.out.println("finished");
+		System.out.println("\n\nfinished");
 	}	
 }
