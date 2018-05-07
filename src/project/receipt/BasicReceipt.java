@@ -15,7 +15,9 @@ public class BasicReceipt implements Receipt {
 		this.items = items;
 	}
 	
-	public void setStoreHeader(StoreHeader h) {store_header = h;}
+	public void setStoreHeader(StoreHeader h) {
+		store_header = h;
+	}
 	
 	public void setTaxComputationMethod(TaxComputationMethod tc) { this.tc = tc; }
 	
