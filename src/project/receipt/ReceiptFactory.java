@@ -87,6 +87,7 @@ public class ReceiptFactory {
 				if(addOnArray[i] instanceof SecondaryHeading) {
 										
 				}
+				else if()
 				
 				
 				
